@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, ScrollView, Image, TouchableOpacity, Dimensions, ActivityIndicator, ImageBackground } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 import Constants from 'expo-constants';
 import * as WebBrowser from 'expo-web-browser';
 import { useFonts, Montserrat_400Regular } from '@expo-google-fonts/montserrat';
@@ -45,13 +44,7 @@ const MainScreen = ( { navigation } ) => {
                 <Text style={styles.bodyText}>{callToAction}</Text>
                 <View style={styles.buttonWrap}>
                   <TouchableOpacity style={styles.signUpBtn} onPress={() => navigation.navigate('SignUpForm')} >
-                    <LinearGradient 
-                      colors={['#016a63', '#1a9f94']} 
-                      style={styles.signUpBtn}
-                      start={ {x: 0.65, y: 0.5} }
-                      end={ {x: 1, y: 0.5} }>
-                        <Text style={styles.buttonText}>Sign Up</Text>
-                    </LinearGradient>  
+                    <Text style={styles.buttonText}>Sign Up</Text>
                   </TouchableOpacity>
                 </View>
               </ScrollView>    
@@ -79,12 +72,10 @@ const styles = StyleSheet.create({
   scrollView: {
   },
   photoTile: {
-    backgroundColor: '#ffffff',
-    height: 250,
+    justifyContent: 'center',
+    alignItems: 'center',
     paddingLeft: 10,
     paddingRight: 10,
-    marginTop: 30,
-    marginBottom: 30,
   },
   topLogoWrap: {
     alignItems: 'center',
@@ -95,13 +86,9 @@ const styles = StyleSheet.create({
     resizeMode: 'contain'
   },
   centerPic: {
-    position: 'relative',
-    left:     0,
-    top:      45,
-    height: 217,
+    height: 250,
     width: (width - 20),
-    resizeMode: 'cover',
-    borderRadius: 25,
+    resizeMode: 'contain',
   },
   bodyText: {
     fontFamily: 'Roboto_400Regular',
@@ -119,9 +106,11 @@ const styles = StyleSheet.create({
   signUpBtn: {
     alignItems: "center",
     justifyContent: 'center',
-    backgroundColor: "#ff2400",
+    backgroundColor: "transparent",
     paddingTop: 10, paddingBottom: 10,
-    borderRadius: 25,
+    borderRadius: 5,
+    borderWidth: 2,
+    borderColor: '#ffffff',
     width: 200,
     height: 50,
   },

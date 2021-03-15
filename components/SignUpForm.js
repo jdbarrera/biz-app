@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { View, Button, StyleSheet, TextInput, Text, ActivityIndicator, TouchableOpacity, KeyboardAvoidingView, Platform, ImageBackground } from "react-native";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import Constants from 'expo-constants';
-import { LinearGradient } from 'expo-linear-gradient';
 import { useFonts, Montserrat_400Regular } from '@expo-google-fonts/montserrat';
 import { Roboto_400Regular } from '@expo-google-fonts/roboto';
 import { addMailContactAPI } from '../api/MailchimpAPI';
+import * as Linking from 'expo-linking';
+
 
 const address = '2450 Scott Blvd Suite 312\nSanta Clara, CA, 95050\nInfo@theinkapp.com\n408-417-1836';
 const backgroundImage = require('../assets/Biz_LoadScreenBG.png');
@@ -59,9 +60,11 @@ const styles = StyleSheet.create({
   submitBtn: {
     alignItems: "center",
     justifyContent: 'center',
-    backgroundColor: "#ff2400",
+    backgroundColor: "transparent",
     paddingTop: 10, paddingBottom: 10,
-    borderRadius: 25,
+    borderRadius: 5,
+    borderWidth: 2,
+    borderColor: '#ffffff',
     width: 200,
     height: 50,
   },
@@ -74,11 +77,25 @@ const styles = StyleSheet.create({
   backBtn: {
     alignItems: "center",
     justifyContent: 'center',
-    backgroundColor: "#ff2400",
+    backgroundColor: "transparent",
     paddingTop: 10, paddingBottom: 10,
-    borderRadius: 25,
+    borderRadius: 5,
+    borderWidth: 2,
+    borderColor: '#ffffff',
     width: 100,
     height: 50,
+  },
+  bizBtn: {
+    alignItems: "center",
+    justifyContent: 'center',
+    backgroundColor: "transparent",
+    paddingTop: 10, paddingBottom: 10,
+    borderRadius: 5,
+    borderWidth: 2,
+    borderColor: '#ffffff',
+    width: 200,
+    height: 50,
+    marginTop: 20,
   },
   h2: {
     fontFamily: 'Montserrat_400Regular',
@@ -138,7 +155,11 @@ const SignUpForm = ({navigation}) => {
         setIsLoading(false);
         setFormErrorMsg('Something went wrong.  Check your email and try again.');
     }
-  }
+  };
+
+  const handleInstaLink = () => {
+    Linking.openURL('https://www.bizincubate.com');
+  };
     
   return ( 
     <KeyboardAvoidingView
@@ -147,13 +168,7 @@ const SignUpForm = ({navigation}) => {
     >
       <View style={styles.backBtnWrap}>
         <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack()} >
-          <LinearGradient 
-            colors={['#016a63', '#1a9f94']} 
-            style={styles.backBtn}
-            start={ {x: 0.65, y: 0.5} }
-            end={ {x: 1, y: 0.5} }>
-              <Text style={styles.buttonText}>Back</Text>
-          </LinearGradient>  
+          <Text style={styles.buttonText}>Back</Text>
         </TouchableOpacity>
       </View>
       {isLoading 
@@ -182,18 +197,15 @@ const SignUpForm = ({navigation}) => {
                     style={styles.input}
                   />
                   <TouchableOpacity style={styles.submitBtn} onPress={submit} >
-                    <LinearGradient 
-                      colors={['#016a63', '#1a9f94']} 
-                      style={styles.submitBtn}
-                      start={ {x: 0.65, y: 0.5} }
-                      end={ {x: 1, y: 0.5} }>
-                        <Text style={styles.buttonText}>Submit</Text>
-                    </LinearGradient>  
+                    <Text style={styles.buttonText}>Submit</Text>
                   </TouchableOpacity>
                 </View>
               :
                 <View style={styles.signUp}>
                   <Text style={styles.bodyText}>{formSuccessMsg}</Text>
+                  <TouchableOpacity style={styles.bizBtn} onPress={handleInstaLink} >
+                    <Text style={styles.buttonText}>Visit BizIncubate.com</Text>
+                  </TouchableOpacity>
                 </View>
               }
           </ImageBackground>  

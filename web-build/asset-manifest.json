@@ -1,11 +1,11 @@
 {
   "files": {
-    "app.js": "/static/js/app.8598858d.chunk.js",
-    "app.js.map": "/static/js/app.8598858d.chunk.js.map",
+    "app.js": "/static/js/app.27f24424.chunk.js",
+    "app.js.map": "/static/js/app.27f24424.chunk.js.map",
     "runtime~app.js": "/static/js/runtime~app.2e9f1821.js",
     "runtime~app.js.map": "/static/js/runtime~app.2e9f1821.js.map",
-    "static/js/2.b4a091a9.chunk.js": "/static/js/2.b4a091a9.chunk.js",
-    "static/js/2.b4a091a9.chunk.js.map": "/static/js/2.b4a091a9.chunk.js.map",
+    "static/js/2.5b855c4b.chunk.js": "/static/js/2.5b855c4b.chunk.js",
+    "static/js/2.5b855c4b.chunk.js.map": "/static/js/2.5b855c4b.chunk.js.map",
     "fonts/Montserrat_100Thin.ttf": "/./fonts/Montserrat_100Thin.ttf",
     "fonts/Montserrat_100Thin_Italic.ttf": "/./fonts/Montserrat_100Thin_Italic.ttf",
     "fonts/Montserrat_200ExtraLight.ttf": "/./fonts/Montserrat_200ExtraLight.ttf",
@@ -42,14 +42,14 @@
     "index.html": "/index.html",
     "manifest.json": "/manifest.json",
     "serve.json": "/serve.json",
-    "static/js/2.b4a091a9.chunk.js.LICENSE.txt": "/static/js/2.b4a091a9.chunk.js.LICENSE.txt",
+    "static/js/2.5b855c4b.chunk.js.LICENSE.txt": "/static/js/2.5b855c4b.chunk.js.LICENSE.txt",
     "static/media/BizIncon1.png": "/static/media/BizIncon1.4d335413.png",
     "static/media/Biz_LoadScreenBG.png": "/static/media/Biz_LoadScreenBG.4f2917b7.png",
     "static/media/Biz_LoadScreenLogo.png": "/static/media/Biz_LoadScreenLogo.d6e2c221.png"
   },
   "entrypoints": [
     "static/js/runtime~app.2e9f1821.js",
-    "static/js/2.b4a091a9.chunk.js",
-    "static/js/app.8598858d.chunk.js"
+    "static/js/2.5b855c4b.chunk.js",
+    "static/js/app.27f24424.chunk.js"
   ]
 }

@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   buttonText: {
     fontFamily: 'Montserrat_400Regular',
     fontSize: 16,
-    color: '#e2f1e5',
+    color: '#ffffff',
     textAlign: 'center',
   },
   submitBtn: {
@@ -73,6 +73,18 @@ const styles = StyleSheet.create({
     top: Constants.statusBarHeight * 1.5,
     left: 10,
     zIndex: 2
+  },
+  overlay: {
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    position: 'absolute',
+    paddingTop: 40,
+    paddingBottom: 20,
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   backBtn: {
     alignItems: "center",
@@ -179,35 +191,37 @@ const SignUpForm = ({navigation}) => {
         :
           
           <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
-            <View style={styles.contactInfo}>
-              <Text style={styles.h2}>Contact Info</Text>     
-              <Text style={styles.bodyText}>{address}</Text>
-            </View>
-            {formSuccessMsg == ''
-              ?
-                <View style={styles.signUp}>
-                  <Text style={styles.h2}>Sign Up For Our Mailing List</Text>
-                  {formErrorMsg !== '' && <Text style={styles.errorText}>{formErrorMsg}</Text>}
-                  <TextInput
-                    placeholder="email"
-                    placeholderTextColor='#ffffff'
-                    value={email}
-                    onChangeText={handleEmailUpdate}
-                    autoCapitalize="none"
-                    style={styles.input}
-                  />
-                  <TouchableOpacity style={styles.submitBtn} onPress={submit} >
-                    <Text style={styles.buttonText}>Submit</Text>
-                  </TouchableOpacity>
-                </View>
-              :
-                <View style={styles.signUp}>
-                  <Text style={styles.bodyText}>{formSuccessMsg}</Text>
-                  <TouchableOpacity style={styles.bizBtn} onPress={handleInstaLink} >
-                    <Text style={styles.buttonText}>Visit BizIncubate.com</Text>
-                  </TouchableOpacity>
-                </View>
-              }
+            <View style={styles.overlay}>
+              <View style={styles.contactInfo}>
+                <Text style={styles.h2}>Contact Info</Text>     
+                <Text style={styles.bodyText}>{address}</Text>
+              </View>
+              {formSuccessMsg == ''
+                ?
+                  <View style={styles.signUp}>
+                    <Text style={styles.h2}>Sign Up For Our Mailing List</Text>
+                    {formErrorMsg !== '' && <Text style={styles.errorText}>{formErrorMsg}</Text>}
+                    <TextInput
+                      placeholder="email"
+                      placeholderTextColor='#ffffff'
+                      value={email}
+                      onChangeText={handleEmailUpdate}
+                      autoCapitalize="none"
+                      style={styles.input}
+                    />
+                    <TouchableOpacity style={styles.submitBtn} onPress={submit} >
+                      <Text style={styles.buttonText}>Submit</Text>
+                    </TouchableOpacity>
+                  </View>
+                :
+                  <View style={styles.signUp}>
+                    <Text style={styles.bodyText}>{formSuccessMsg}</Text>
+                    <TouchableOpacity style={styles.bizBtn} onPress={handleInstaLink} >
+                      <Text style={styles.buttonText}>Visit BizIncubate.com</Text>
+                    </TouchableOpacity>
+                  </View>
+                }
+             </View>   
           </ImageBackground>  
       }
     </KeyboardAvoidingView>      

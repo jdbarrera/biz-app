@@ -23,36 +23,38 @@ const MainScreen = ( { navigation } ) => {
   });
     return (
       <View style={styles.container}>
-        <ImageBackground source={backgroundImage} style={styles.backgroundImage}>        
-          {fontsLoaded
-            ?
-              <ScrollView style={styles.scrollView} >
-                <View style={styles.topLogoWrap}>
-                  <Image
-                    style={styles.topLogo}
-                    source={require('../assets/Biz_LoadScreenLogo.png')}
-                  />
+        <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
+          <View style={styles.overlay}>        
+            {fontsLoaded
+              ?
+                <ScrollView style={styles.scrollView} >
+                  <View style={styles.topLogoWrap}>
+                    <Image
+                      style={styles.topLogo}
+                      source={require('../assets/Biz_LoadScreenLogo.png')}
+                    />
+                  </View>
+                  <Text style={styles.bodyText}>{bodyText1}</Text>
+                  <View style={styles.photoTile}>
+                    <Image
+                      style={styles.centerPic}
+                      source={require('../assets/BizIncon1.png')}
+                    />
+                  </View>
+                  <Text style={styles.bodyText}>{bodyText2}</Text>
+                  <Text style={styles.bodyText}>{callToAction}</Text>
+                  <View style={styles.buttonWrap}>
+                    <TouchableOpacity style={styles.signUpBtn} onPress={() => navigation.navigate('SignUpForm')} >
+                      <Text style={styles.buttonText}>Sign Up</Text>
+                    </TouchableOpacity>
+                  </View>
+                </ScrollView>    
+              :
+                <View style={{flex: 1, justifyContent: 'center'}}>
+                  <ActivityIndicator size="large" color="#00ff00" />
                 </View>
-                <Text style={styles.bodyText}>{bodyText1}</Text>
-                <View style={styles.photoTile}>
-                  <Image
-                    style={styles.centerPic}
-                    source={require('../assets/BizIncon1.png')}
-                  />
-                </View>
-                <Text style={styles.bodyText}>{bodyText2}</Text>
-                <Text style={styles.bodyText}>{callToAction}</Text>
-                <View style={styles.buttonWrap}>
-                  <TouchableOpacity style={styles.signUpBtn} onPress={() => navigation.navigate('SignUpForm')} >
-                    <Text style={styles.buttonText}>Sign Up</Text>
-                  </TouchableOpacity>
-                </View>
-              </ScrollView>    
-            :
-              <View style={{flex: 1, justifyContent: 'center'}}>
-                <ActivityIndicator size="large" color="#00ff00" />
-              </View>
-          }
+            }
+          </View>  
         </ImageBackground>              
       </View>
     );
@@ -100,8 +102,20 @@ const styles = StyleSheet.create({
   buttonText: {
     fontFamily: 'Montserrat_400Regular',
     fontSize: 16,
-    color: '#e2f1e5',
+    color: '#ffffff',
     textAlign: 'center',
+  },
+  overlay: {
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    position: 'absolute',
+    paddingTop: 40,
+    paddingBottom: 20,
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   signUpBtn: {
     alignItems: "center",

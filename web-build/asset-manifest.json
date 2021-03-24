@@ -1,7 +1,7 @@
 {
   "files": {
-    "app.js": "/static/js/app.c6122a9f.chunk.js",
-    "app.js.map": "/static/js/app.c6122a9f.chunk.js.map",
+    "app.js": "/static/js/app.0405aa1e.chunk.js",
+    "app.js.map": "/static/js/app.0405aa1e.chunk.js.map",
     "runtime~app.js": "/static/js/runtime~app.2e9f1821.js",
     "runtime~app.js.map": "/static/js/runtime~app.2e9f1821.js.map",
     "static/js/2.5b855c4b.chunk.js": "/static/js/2.5b855c4b.chunk.js",
@@ -45,11 +45,11 @@
     "static/js/2.5b855c4b.chunk.js.LICENSE.txt": "/static/js/2.5b855c4b.chunk.js.LICENSE.txt",
     "static/media/BizIncon1.png": "/static/media/BizIncon1.4d335413.png",
     "static/media/Biz_LoadScreenBG.png": "/static/media/Biz_LoadScreenBG.4f2917b7.png",
-    "static/media/Biz_LoadScreenLogo.png": "/static/media/Biz_LoadScreenLogo.d6e2c221.png"
+    "static/media/Bizlogo2.0.png": "/static/media/Bizlogo2.0.9c8ff404.png"
   },
   "entrypoints": [
     "static/js/runtime~app.2e9f1821.js",
     "static/js/2.5b855c4b.chunk.js",
-    "static/js/app.c6122a9f.chunk.js"
+    "static/js/app.0405aa1e.chunk.js"
   ]
 }

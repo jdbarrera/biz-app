@@ -31,7 +31,7 @@ const MainScreen = ( { navigation } ) => {
                   <View style={styles.topLogoWrap}>
                     <Image
                       style={styles.topLogo}
-                      source={require('../assets/Biz_LoadScreenLogo.png')}
+                      source={require('../assets/Bizlogo2.0.png')}
                     />
                   </View>
                   <Text style={styles.bodyText}>{bodyText1}</Text>
